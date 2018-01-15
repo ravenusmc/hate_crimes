@@ -1,7 +1,7 @@
 # Hate_crimes
 ## Intro
 
-This is a data science project that will be focusing on hate crimes across the U.S. I received all of the data for this project from the FiveThirtyEight repo which may be found at: https://github.com/fivethirtyeight/data/blob/master/hate-crimes/hate_crimes.csv.
+This is a data science project that will be focusing on hate crimes across the U.S. I received all of the data for this project from the FiveThirtyEight repo which may be found at: https://github.com/fivethirtyeight/data/tree/master/hate-crimes
 
 
 # Getting started
