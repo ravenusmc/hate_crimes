@@ -1,0 +1,10 @@
+/**************************
+This file will contain CSS that is used 
+throughout all of the pages
+***************************/
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
