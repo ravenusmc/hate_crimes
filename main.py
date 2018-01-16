@@ -9,8 +9,8 @@ app = Flask(__name__)
 
 #This route takes the user to the home page
 @app.route('/')
-def home():
-    return render_template('home.html')
+def landing():
+    return render_template('landing.html')
 
 
 # set the secret key. keep this really secret:
