@@ -1,0 +1,19 @@
+/*******************************
+The CSS code in this file will deal with the login and 
+sign up pages 
+********************************/
+
+
+
+
+/*******************************
+signup page logins
+********************************/
+
+#signup_main {
+  background-image: url(https://source.unsplash.com/49LBMXrY5BE);
+  height: 650px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
