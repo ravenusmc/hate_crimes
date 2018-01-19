@@ -3,6 +3,10 @@ This file will contain CSS that is used
 throughout all of the pages
 ***************************/
 
+.center {
+
+}
+
 footer {
   display: flex;
   flex-direction: column;
