@@ -9,11 +9,16 @@ CSS for signup page
 ********************************/
 
 #login_main {
-
-  
+  background-image: url(https://source.unsplash.com/4KDngW9vWwo);
+  height: 650px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-
-
 
 /*******************************
 CSS for signup page
@@ -37,7 +42,7 @@ CSS for signup page
   align-items: center;
   background-color: rgba(0,0,0,0.8);
   color: white;
-  padding: 15px;
+  padding: 20px;
   border-radius: 10px;
 }
 
