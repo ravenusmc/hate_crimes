@@ -3,8 +3,12 @@ This file will contain CSS that is used
 throughout all of the pages
 ***************************/
 
-.center {
-
+button {
+  margin-top: 10px;
+  background-color: orange;
+  border: 1px solid orange;
+  padding: 10px;
+  border-radius: 12px;
 }
 
 footer {
