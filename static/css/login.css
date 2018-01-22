@@ -44,6 +44,7 @@ CSS for signup page
   color: white;
   padding: 20px;
   border-radius: 10px;
+  border: 2px solid white;
 }
 
 form {
