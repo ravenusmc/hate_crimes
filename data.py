@@ -13,6 +13,12 @@ class Data():
     def test(self):
         print(self.data)
 
+    def mean(self):
+        print(self.data['median_household_income'].mean())
+
+    def correlation(self):
+        print(self.data.corr())
+
 
 
 """ Things to look at:
@@ -28,5 +34,5 @@ class Data():
 
 
 data = Data()
-data.test()
+data.mean()
 
