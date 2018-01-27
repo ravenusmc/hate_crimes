@@ -3,6 +3,39 @@ The CSS code in this file will deal with the login and
 sign up pages 
 ********************************/
 
+.initial_btn {
+  margin-top: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  background-color: #fcad26;
+  font-size: 16px;
+  font-weight: 300px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 8px #efa424;
+}
+
+.initial_btn:hover {
+  box-shadow: 0 4px #efa424;
+  top: 2px;
+}
+
+.initial_btn:active {
+  box-shadow: none;
+  top: 6px;
+}
+
+button {
+  margin-top: 10px;
+  background-color: orange;
+  border: 1px solid orange;
+  padding: 10px;
+  border-radius: 12px;
+}
 
 /*******************************
 CSS for log in page
