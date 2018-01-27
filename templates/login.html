@@ -6,7 +6,7 @@
 <main id='login_main'>
 
   <div class='signup_div'>
-    <h1>Login</h1>
+    <h1>Log In</h1>
     <!-- Error messaging -->
       {% for message in get_flashed_messages() %}
         <div class="alert alert-danger" role="alert">
@@ -15,8 +15,8 @@
       {% endfor %}
     <!-- End Error messaging -->
     <form method='POST'>
-      <input placeholder='username' name='username'>
-      <input placeholder='password' name='password' type='password'>
+      <input class='login_input' placeholder='username' name='username'>
+      <input class='login_input' placeholder='password' name='password' type='password'>
       <button>Submit</button>
     </form>
 

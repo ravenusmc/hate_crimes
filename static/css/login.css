@@ -5,7 +5,7 @@ sign up pages
 
 
 /*******************************
-CSS for signup page
+CSS for log in page
 ********************************/
 
 #login_main {
@@ -18,6 +18,11 @@ CSS for signup page
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.login_input:focus {
+  background-color: #6cf70c;
+  border-color: #6cf70c;
 }
 
 /*******************************
@@ -45,6 +50,11 @@ CSS for signup page
   padding: 20px;
   border-radius: 10px;
   border: 2px solid white;
+}
+
+.sign_up_login:focus {
+  background-color: #6cf70c;
+  border-color: #6cf70c;
 }
 
 form {
