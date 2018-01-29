@@ -1,6 +1,7 @@
 #This file will hold all of the work for the CSV file. 
 import csv
 import numpy as np
+import matplotlib.pyplot as plt
 import pandas as pd
 
 
@@ -19,6 +20,18 @@ class Data():
     def correlation(self):
         print(self.data.corr())
 
+    def scatter(self):
+        colors = (0,0,0)
+        area = np.pi*3
+        trump = self.data['share_voters_voted_trump']
+        income = self.data['median_household_income']
+        plt.scatter(income, trump, s=area, c=colors, alpha=0.5)
+        plt.title('Trump Voters Vs Income')
+        plt.xlabel('Income Level')
+        plt.ylabel('Percentage Voting Trump')
+        plt.show()
+
+
 
 
 """ Things to look at:
@@ -34,5 +47,5 @@ class Data():
 
 
 data = Data()
-data.mean()
+data.scatter()
 
