@@ -22,11 +22,17 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <a class="navbar-brand" href="/">Hate Crimes</a>
+      <a class="navbar-brand" href="/home">Hate Crimes</a>
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         {% if allowed_in %}
         <li class="nav-item">
+          <a class="nav-link" href="/home">Home</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="/data">Data</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/graphs">Graphs</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/sign_out">Log Out</a>

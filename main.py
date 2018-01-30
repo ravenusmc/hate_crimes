@@ -68,6 +68,12 @@ def home():
     allowed_in = True 
     return render_template('home.html', allowed_in = allowed_in)
 
+#This route will take the user to the page with all of the graphs
+@app.route('/graphs')
+def graphs():
+    allowed_in = True 
+    return render_template('graph.html', allowed_in = allowed_in)
+
 #This route will sign out the user 
 @app.route('/sign_out')
 def logout():

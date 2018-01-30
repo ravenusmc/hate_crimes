@@ -1,0 +1,32 @@
+/*******************************
+The CSS code in this file will deal 
+with the graph page
+********************************/
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: auto;
+}
+
+/*******************************
+CSS for the header
+********************************/
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+.bk-root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

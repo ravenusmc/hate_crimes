@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/graph.css') }}">
+<!-- Bokeh code -->
+<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.12.6.min.css" type="text/css" />        
+<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.6.min.js"></script>
+<script type="text/javascript">
+    Bokeh.set_log_level("info");
+</script>
+
+<style>
+
+</style>
+
+<header>
+  <h1>Graph Page</h1>
+  <h3>Visually See the Data</h3>
+</header>
+
+<div class="bk-root">
+  <div class="bk-plotdiv" id="6cae90ed-0ef1-4f2f-b5a4-4bf18e983095">
+  </div>
+</div>
+        
+
+<script src='{{ url_for('static', filename='js/graph.js') }}'></script>
+{% endblock %}
