@@ -7,6 +7,7 @@ import requests
 #importing files that I made for the project 
 from user import *
 from db import *
+from data import *
 
 #Setting up Flask
 app = Flask(__name__)
@@ -71,8 +72,15 @@ def home():
 #This route will take the user to the page with all of the graphs
 @app.route('/graphs')
 def graphs():
+    #This variable will change the navbar to only display certain items 
+    #when a user is logged in. 
     allowed_in = True 
-    return render_template('graph.html', allowed_in = allowed_in)
+    #Creating the data object. 
+    data = Data()
+    #Getting the correlations between two columns
+    corr = data.correlation()
+    return render_template('graph.html', allowed_in = allowed_in, corr_0 = corr[0],
+        corr_1 = corr[1])
 
 #This route will sign out the user 
 @app.route('/sign_out')

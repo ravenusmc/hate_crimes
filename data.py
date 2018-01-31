@@ -21,10 +21,16 @@ class Data():
     def mean(self):
         print(self.data['median_household_income'].mean())
 
+    #This method will return a list of correlations. Since, I don't have everything planned out 
+    #That I want to look at, I'll find the correlations as I go and add them to the list. 
     def correlation(self):
-        print(self.data.corr())
-
-
+        #Creating the list that will hold all of the values
+        correlation_list = []
+        #Getting the values and then appending them to the list
+        correlation_list.append(self.data['median_household_income'].corr(self.data['share_voters_voted_trump']))
+        correlation_list.append(self.data['share_population_in_metro_areas'].corr(self.data['share_voters_voted_trump']))
+        #Returning the list 
+        return correlation_list
 
 
 """ Things to look at:
@@ -38,7 +44,6 @@ class Data():
 
 
 
-data = Data()
-#data.scatter()
-data.bokeh()
+# data = Data()
+# data.correlation()
 

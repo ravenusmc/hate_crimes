@@ -19,26 +19,31 @@
 </header>
 
 <!-- Code for graph areas -->
-<main>
+<main>  
 
-    <div>
+  <div>
+    <div class="bk-root">
       <div class="bk-plotdiv" id="6cae90ed-0ef1-4f2f-b5a4-4bf18e983095"> 
       </div>
-      <br>
-      <h6 class='center'>Correlation between both columns: </h6>
     </div>
+  </div>
+  <h6 class='center'>Correlation between both columns: {{ corr_0 }}</h6>
 
-    <hr>
+  <hr>
 
-    <div>
-      <div class="bk-plotdiv" id="8724f4db-8328-4e40-be53-5de2d0a6f800">
-      </div>
-      <h1 class='center'>Graph Two</h1>
+  <div>
+    <div class="bk-root">
+        <div class="bk-plotdiv" id="8724f4db-8328-4e40-be53-5de2d0a6f800">
+        </div>
     </div>
+  </div>
+  <h6 class='center'>Correlation between both columns: {{ corr_1 }}</h6>
 
+  <hr>
 
 </main>
-        
+
+<hr>   
 
 <script src='{{ url_for('static', filename='js/graph.js') }}'></script>
 {% endblock %}

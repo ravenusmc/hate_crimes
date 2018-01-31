@@ -65,8 +65,8 @@ class Graph():
 
         show(plot)
 
-graph = Graph()
-graph.test()
+# graph = Graph()
+# graph.test()
 
 
 
