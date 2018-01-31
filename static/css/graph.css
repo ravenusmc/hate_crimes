@@ -13,6 +13,10 @@ body {
   margin: auto;
 }
 
+.center {
+  text-align: center;
+}
+
 /*******************************
 CSS for the header
 ********************************/
@@ -25,8 +29,9 @@ header {
   margin-bottom: 25px;
 }
 
-.bk-root {
+main {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+

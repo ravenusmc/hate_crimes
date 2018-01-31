@@ -51,16 +51,16 @@ class Graph():
         #Turning the data into a ColumnDataSource 
         hate_crime_data = ColumnDataSource(data) 
 
-        plot = figure(x_axis_label='Median Household Income', y_axis_label='percentage who voted for Trump',
+        plot = figure(x_axis_label='Population Percentage in Metro Area', y_axis_label='percentage who voted for Trump',
             plot_width=600, plot_height=500, tools='pan,wheel_zoom,box_zoom,reset,hover,save', 
-            title='Trump Voters VS. Median Household Income')
+            title='Trump Voters VS. Percentage Living in Metro Area')
 
         plot.circle(x='share_population_in_metro_areas', y='share_voters_voted_trump', source=hate_crime_data, 
             size=15)
 
         hover = plot.select_one(HoverTool)
         hover.tooltips = [('state', '@state'),
-        ('Median Household Income', '@median_household_income'),
+        ('Pop. In Metro Area', '@share_population_in_metro_areas'),
         ('Percentage Voted Trump', '@share_voters_voted_trump ')]
 
         show(plot)
