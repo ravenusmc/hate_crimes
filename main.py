@@ -82,6 +82,11 @@ def graphs():
     return render_template('graph.html', allowed_in = allowed_in, corr_0 = corr[0],
         corr_1 = corr[1])
 
+#This route will take the user to the edit page so that they can edit their profil 
+@app.route('/edit')
+def edit():
+    return render_template('edit.html')
+
 #This route will sign out the user 
 @app.route('/sign_out')
 def logout():
