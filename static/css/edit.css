@@ -1,0 +1,74 @@
+/*******************************
+The CSS code in this file will deal 
+with the edit page
+********************************/
+
+main {
+  display: flex;
+  flex-flow: column;
+  min-height: 78vh;
+}
+
+header {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1; 
+}
+
+form {
+  border: 2px solid black;
+  padding: 30px;
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/*******************************
+CSS dealing with button
+********************************/
+
+.initial_btn {
+  margin-top: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  background-color: #fcad26;
+  font-size: 16px;
+  font-weight: 300px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 8px #efa424;
+}
+
+.initial_btn:hover {
+  box-shadow: 0 4px #efa424;
+  top: 2px;
+}
+
+.initial_btn:active {
+  box-shadow: none;
+  top: 6px;
+}
+
+button {
+  margin-top: 10px;
+  background-color: orange;
+  border: 1px solid orange;
+  padding: 10px;
+  border-radius: 12px;
+}

@@ -58,3 +58,19 @@ class Connection():
                 not_found = False
                 password_no_match = True
         return flag, not_found, password_no_match
+
+    #This method will pull the user information out of the database to build a user object once logged in. 
+    def pull_user_info(self, username):
+        query = ("""SELECT * FROM users WHERE username = %s""")
+        self.cursor.execute(query, (username,))
+        row = self.cursor.fetchone()
+        return row
+
+    #This method will update the username in the database.
+    def update(self, username_original, username):
+        self._SQL = """UPDATE users SET username = %s
+        where username = %s"""
+        self.cursor.execute(self._SQL, (username, username_original))
+        self.conn.commit()
+        self.cursor.close()
+        self.conn.close()
