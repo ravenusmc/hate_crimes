@@ -13,7 +13,8 @@ import pandas as pd
 class Data():
 
     def __init__(self):
-        self.data = pd.read_csv('data.csv')
+        #self.data = pd.read_csv('data.csv')
+        self.data = pd.read_csv('hate_crimes.csv')
 
     def test(self):
         print(self.data)
@@ -45,5 +46,6 @@ class Data():
 
 
 # data = Data()
-# data.correlation()
+# data.test()
+#data.correlation()
 

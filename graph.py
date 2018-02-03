@@ -14,32 +14,6 @@ import pandas as pd
 
 class Graph():
 
-    #This method will generate the HTML for the bokek scatter plots as I need them. 
-    def generate_bokeh_plot(self):
-        #Creatin an output file 
-        output_file("test.html")
-
-        #loading the csv to the file 
-        file = 'data.csv'
-        #Reading and then storing the csv file as a variable. 
-        data = pd.read_csv(file)
-        #Turning the data into a ColumnDataSource 
-        hate_crime_data = ColumnDataSource(data) 
-
-        plot = figure(x_axis_label='Median Household Income', y_axis_label='percentage who voted for Trump',
-            plot_width=600, plot_height=500, tools='pan,wheel_zoom,box_zoom,reset,hover,save', 
-            title='Trump Voters VS. Median Household Income')
-
-        plot.circle(x='median_household_income', y='share_voters_voted_trump', source=hate_crime_data, 
-            size=15)
-
-        hover = plot.select_one(HoverTool)
-        hover.tooltips = [('state', '@state'),
-        ('Median Household Income', '@median_household_income'),
-        ('Percentage Voted Trump', '@share_voters_voted_trump ')]
-
-        show(plot)
-
     def test(self):
         #Creatin an output file 
         output_file("test.html")
@@ -65,8 +39,41 @@ class Graph():
 
         show(plot)
 
-# graph = Graph()
-# graph.test()
+    #This method will generate the graph with the states color coded by who won them-Clinton or Trump
+    def generate_bokeh_new_graph(self):
+        #Creating an output file 
+        output_file("graph.html")
+
+        #loading the csv to the file 
+        file = 'hate_crimes.csv'
+        #Reading and then storing the csv file as a variable. 
+        data = pd.read_csv(file)
+        #Turning the data into a ColumnDataSource 
+        hate_crime_data = ColumnDataSource(data)
+
+        #This line will be what sets up a color code between which states voted for clinton or trump.
+        color_mapper = CategoricalColorMapper(factors=['Trump', 'Clinton'], 
+        palette=['red', 'blue']) 
+
+        plot = figure(x_axis_label='Population Percentage in Metro Area', y_axis_label='percentage who voted for Trump',
+            plot_width=600, plot_height=500, tools='pan,wheel_zoom,box_zoom,reset,hover,save', 
+            title='Trump Voters VS. Percentage Living in Metro Area')
+
+        plot.circle(x='share_population_in_metro_areas', y='share_voters_voted_trump', source=hate_crime_data, 
+            size=15, color=dict(field='won_state', transform=color_mapper))
+
+        # plot.circle(x='median_household_income', y='share_voters_voted_trump', source=hate_crime_data, 
+        #     size=15, color=dict(field='won_state', transform=color_mapper))
+
+        hover = plot.select_one(HoverTool)
+        hover.tooltips = [('state', '@state'),
+        ('Pop. In Metro Area', '@share_population_in_metro_areas'),
+        ('Percentage Voted Trump', '@share_voters_voted_trump ')]
+
+        show(plot)
+
+graph = Graph()
+graph.generate_bokeh_new_graph()
 
 
 
@@ -114,6 +121,7 @@ class Graph():
     #     chart.buildhtml()
     #     output_file.write(chart.htmlcontent)
     #     output_file.close()
+
 
 
 
