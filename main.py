@@ -84,7 +84,7 @@ def graphs():
     #Getting the correlations between two columns
     corr = data.correlation()
     return render_template('graph.html', allowed_in = allowed_in, corr_0 = corr[0],
-        corr_1 = corr[1])
+        corr_1 = corr[1], corr_2 = corr[2], corr_3 = corr[3])
 
 #This route will take the user to the edit page so that they can edit their profil 
 @app.route('/edit', methods=['GET', 'POST'])

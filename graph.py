@@ -42,7 +42,7 @@ class Graph():
     #This method will generate the graph with the states color coded by who won them-Clinton or Trump
     def generate_bokeh_new_graph(self):
         #Creating an output file 
-        output_file("graph.html")
+        output_file("bokeh_graph.html")
 
         #loading the csv to the file 
         file = 'hate_crimes.csv'
@@ -55,11 +55,11 @@ class Graph():
         color_mapper = CategoricalColorMapper(factors=['Trump', 'Clinton'], 
         palette=['red', 'blue']) 
 
-        plot = figure(x_axis_label='Population Percentage in Metro Area', y_axis_label='percentage who voted for Trump',
+        plot = figure(x_axis_label='Share of Black Poverty', y_axis_label='Hate Crimes / 100,000',
             plot_width=600, plot_height=500, tools='pan,wheel_zoom,box_zoom,reset,hover,save', 
-            title='Trump Voters VS. Percentage Living in Metro Area')
+            title='Black Poverty Versus Hate Crimes')
 
-        plot.circle(x='share_population_in_metro_areas', y='share_voters_voted_trump', source=hate_crime_data, 
+        plot.circle(x='black_poverty', y='avg_hatecrimes_per_100k_fbi', source=hate_crime_data, 
             size=15, color=dict(field='won_state', transform=color_mapper))
 
         # plot.circle(x='median_household_income', y='share_voters_voted_trump', source=hate_crime_data, 
@@ -67,8 +67,8 @@ class Graph():
 
         hover = plot.select_one(HoverTool)
         hover.tooltips = [('state', '@state'),
-        ('Pop. In Metro Area', '@share_population_in_metro_areas'),
-        ('Percentage Voted Trump', '@share_voters_voted_trump ')]
+        ('Black Poverty', '@black_poverty'),
+        ('Hate Crime Average', '@avg_hatecrimes_per_100k_fbi')]
 
         show(plot)
 

@@ -30,6 +30,8 @@ class Data():
         #Getting the values and then appending them to the list
         correlation_list.append(self.data['median_household_income'].corr(self.data['share_voters_voted_trump']))
         correlation_list.append(self.data['share_population_in_metro_areas'].corr(self.data['share_voters_voted_trump']))
+        correlation_list.append(self.data['share_white_poverty'].corr(self.data['avg_hatecrimes_per_100k_fbi']))
+        correlation_list.append(self.data['black_poverty'].corr(self.data['avg_hatecrimes_per_100k_fbi']))
         #Returning the list 
         return correlation_list
 
