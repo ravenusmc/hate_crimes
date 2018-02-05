@@ -55,11 +55,11 @@ class Graph():
         color_mapper = CategoricalColorMapper(factors=['Trump', 'Clinton'], 
         palette=['red', 'blue']) 
 
-        plot = figure(x_axis_label='Share of Black Poverty', y_axis_label='Hate Crimes / 100,000',
+        plot = figure(x_axis_label='Percentage of Non-white', y_axis_label='Hate Crimes / 100,000',
             plot_width=600, plot_height=500, tools='pan,wheel_zoom,box_zoom,reset,hover,save', 
-            title='Black Poverty Versus Hate Crimes')
+            title='Percentage of Non-white Versus Voted Trump')
 
-        plot.circle(x='black_poverty', y='avg_hatecrimes_per_100k_fbi', source=hate_crime_data, 
+        plot.circle(x='share_non_white', y='share_voters_voted_trump', source=hate_crime_data, 
             size=15, color=dict(field='won_state', transform=color_mapper))
 
         # plot.circle(x='median_household_income', y='share_voters_voted_trump', source=hate_crime_data, 
@@ -67,8 +67,8 @@ class Graph():
 
         hover = plot.select_one(HoverTool)
         hover.tooltips = [('state', '@state'),
-        ('Black Poverty', '@black_poverty'),
-        ('Hate Crime Average', '@avg_hatecrimes_per_100k_fbi')]
+        ('Share of Non White', '@share_non_white'),
+        ('Voted Trump', '@share_voters_voted_trump')]
 
         show(plot)
 

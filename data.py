@@ -32,6 +32,8 @@ class Data():
         correlation_list.append(self.data['share_population_in_metro_areas'].corr(self.data['share_voters_voted_trump']))
         correlation_list.append(self.data['share_white_poverty'].corr(self.data['avg_hatecrimes_per_100k_fbi']))
         correlation_list.append(self.data['black_poverty'].corr(self.data['avg_hatecrimes_per_100k_fbi']))
+        correlation_list.append(self.data['gini_index'].corr(self.data['avg_hatecrimes_per_100k_fbi']))
+        correlation_list.append(self.data['share_non_white'].corr(self.data['share_voters_voted_trump']))
         #Returning the list 
         return correlation_list
 
