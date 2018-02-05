@@ -51,16 +51,20 @@ def signup():
         username = request.form['username']
         email = request.form['email']
         password = request.form['password']
-        #creating the db object to interact with the db. 
-        db = Connection()
-        #Encrypting the password
-        password, hashed = db.encrypt_pass(password)
-        #creating user object 
-        user = User(username, email, password, hashed)
-        #Adding the user to the database
-        db.insert(user)
-        #Once the information is added to the db, the user is redirected to login page. 
-        return redirect(url_for('login'))
+        password2 = request.form['password2']
+        if password != password2:
+            flash('Passwords Do Not Match!')
+        else:
+            #creating the db object to interact with the db. 
+            db = Connection()
+            #Encrypting the password
+            password, hashed = db.encrypt_pass(password)
+            #creating user object 
+            user = User(username, email, password, hashed)
+            #Adding the user to the database
+            db.insert(user)
+            #Once the information is added to the db, the user is redirected to login page. 
+            return redirect(url_for('login'))
     return render_template('signup.html')
 
 #This route will take the user to the home page, once they sign in

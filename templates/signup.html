@@ -7,10 +7,18 @@
 
   <div class='signup_div'>
     <h1>Sign Up</h1>
+    <!-- Error messaging -->
+    {% for message in get_flashed_messages() %}
+      <div class="alert alert-danger" role="alert">
+        {{ message }}
+      </div>
+    {% endfor %}
+    <!-- End Error messaging -->
     <form method="POST">
       <input class='sign_up_login' placeholder='Username' name='username'>
-      <input class='sign_up_login' placeholder='email' name='email'>
-      <input class='sign_up_login' placeholder='password' type='password' name='password'>
+      <input class='sign_up_login' placeholder='Email' name='email'>
+      <input class='sign_up_login' placeholder='Password' type='password' name='password'>
+      <input class='sign_up_login' placeholder='Retype Password' type='password' name='password2'>
       <button class='initial_btn'>Submit</button>
     </form>
   </div>
