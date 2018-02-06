@@ -18,7 +18,7 @@ body {
 }
 
 /*******************************
-CSS for the header
+CSS for the header and se
 ********************************/
 
 header {
@@ -29,9 +29,64 @@ header {
   margin-bottom: 25px;
 }
 
+#optionSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+select {
+  margin-bottom: 15px;
+}
+
+/*******************************
+CSS for the main/graph area portion of the page
+********************************/
+
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 38vh;
+}
+
+#graphOne {
+  display: none;
+}
+
+#graphOneSub {
+  display: none;
+}
+
+#graphTwo {
+  display: none;
+}
+
+#graphTwoSub {
+  display: none;
+}
+
+#graphThree {
+  display: none;
+}
+
+#graphThreeSub {
+  display: none;
+}
+
+#graphFour {
+  display: none;
+}
+
+#graphFourSub {
+  display: none;
+}
+
+#graphFive {
+  display: none;
+}
+
+#graphFiveSub {
+  display: none;
 }
 

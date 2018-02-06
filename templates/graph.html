@@ -19,68 +19,113 @@
   <p>Red Dot = Went to Trump, Blue Dot = Went to Clinton</p>
 </header>
 
+<!-- Code for the area on which graph to see -->
+<section id='optionSection'>
+  <select id="select_path">
+    <option value="trumpVoters_meadianHousehold">Trump Voters Vs Median Household Income</option>
+    <option value="trumpVoters_metroArea">Trump Voters Vs Percentage Living in Metro Area</option>
+    <option value="whitePoverty_hateCrimes">White Poverty Vs Hate Crimes</option>
+    <option value="blackPoverty_hateCrimes">Black Poverty Vs Hate Crimes</option>
+    <option value="giniIndex_hateCrimes">Gini Index Vs Hate Crimes</option>
+  </select>
+  <button onclick='selectTest(); return false;'>Push To Change Graph</button>
+</section>
+
 <!-- Code for graph areas -->
 <main>  
 
-  <div>
+  <div id='graphOne'>
     <div class="bk-root">
       <div class="bk-plotdiv" id="16f76b21-f3d6-4083-8663-1421b65e4339">
       </div>
     </div>
   </div>
-  <h6 class='center'>Correlation between both columns: {{ corr_0 }}</h6>
+  <h6 id='graphOneSub' class='center'>Correlation between both columns: {{ corr_0 }}</h6>
 
   <hr>
 
-  <div>
+  <div id='graphTwo'>
     <div class="bk-root">
         <div class="bk-plotdiv" id="ffd182a2-14e4-4e28-9019-9dee84ee5447">
         </div>
     </div>
   </div>
-  <h6 class='center'>Correlation between both columns: {{ corr_1 }}</h6>
+  <h6 id='graphTwoSub' class='center'>Correlation between both columns: {{ corr_1 }}</h6>
 
   <hr>
 
-  <div>
+  <div id='graphThree'>
     <div class="bk-root">
       <div class="bk-plotdiv" id="32d95d3a-4065-4e29-964b-364ec46cc2c3"></div>
     </div>
   </div>
-  <h6 class='center'>Correlation between both columns: {{ corr_2 }}</h6>
+  <h6 id='graphThreeSub' class='center'>Correlation between both columns: {{ corr_2 }}</h6>
 
   <hr>
 
-  <div>
+  <div id='graphFour'>
     <div class="bk-root">
       <div class="bk-plotdiv" id="9adf2f36-5d2c-44ec-91c1-3bf370048301"></div>
     </div>
   </div>
-  <h6 class='center'>Correlation between both columns: {{ corr_3 }}</h6>
+  <h6 id='graphFourSub' class='center'>Correlation between both columns: {{ corr_3 }}</h6>
 
   <hr>
 
-  <div>
+  <div id='graphFive'>
     <div class="bk-root">
       <div class="bk-plotdiv" id="1ced75fa-dd94-42c3-a4b7-7a41d5801916"></div>
     </div>
   </div>
-  <h6 class='center'>Correlation between both columns: {{ corr_4 }}</h6>
-
-  <hr>
-
-  <div>
-    <div class="bk-root">
-      <div class="bk-plotdiv" id="4f80e6f8-361e-48db-81b7-38cf171b515e"></div>
-    </div>
-  </div>
-  <h6 class='center'>Correlation between both columns: {{ corr_5 }}</h6>
+  <h6 id='graphFiveSub' class='center'>Correlation between both columns: {{ corr_4 }}</h6>
 
   <hr>
 
 </main>
 
+
 <hr>   
 
 <script src='{{ url_for('static', filename='js/graph.js') }}'></script>
+<script type="text/javascript">
+  
+  var selected = '';
+
+  function selectTest() {
+
+    selected = document.getElementById('select_path').value;
+
+    document.getElementById("graphOne").style.display = "none";
+    document.getElementById("graphOneSub").style.display = "none";
+    document.getElementById("graphTwo").style.display = "none";
+    document.getElementById("graphTwoSub").style.display = "none";
+    document.getElementById("graphThree").style.display = "none";
+    document.getElementById("graphThreeSub").style.display = "none";
+    document.getElementById("graphFour").style.display = "none";
+    document.getElementById("graphFourSub").style.display = "none";
+    document.getElementById("graphFive").style.display = "none";
+    document.getElementById("graphFiveSub").style.display = "none";
+
+    if (selected == "trumpVoters_meadianHousehold") {
+      document.getElementById("graphOne").style.display = "block";
+      document.getElementById("graphOneSub").style.display = "block";
+    } else if (selected == "trumpVoters_metroArea") {
+      document.getElementById("graphTwo").style.display = "block";
+      document.getElementById("graphTwoSub").style.display = "block";
+    } else if (selected == "whitePoverty_hateCrimes") {
+      document.getElementById("graphThree").style.display = "block";
+      document.getElementById("graphThreeSub").style.display = "block";
+    } else if (selected == "blackPoverty_hateCrimes") {
+      document.getElementById("graphFour").style.display = "block";
+      document.getElementById("graphFourSub").style.display = "block";
+    } else if (selected == "giniIndex_hateCrimes") {
+      document.getElementById("graphFive").style.display = "block";
+      document.getElementById("graphFiveSub").style.display = "block";
+    }
+
+
+  }
+
+</script>
+
 {% endblock %}

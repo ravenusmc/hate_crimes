@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/graph.css') }}">
+<!-- Bokeh code -->
+<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.12.6.min.css" type="text/css" />        
+<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.6.min.js"></script>
+<script type="text/javascript">
+    Bokeh.set_log_level("info");
+</script>
+
+<style>
+
+</style>
+
+<header>
+  <h1>Graph Page</h1>
+  <h3>Visually See the Data</h3>
+  <p>Red Dot = Went to Trump, Blue Dot = Went to Clinton</p>
+</header>
+
+<!-- Code for the area on which graph to see -->
+<section>
+  <select id="select_path">
+    <option value="trumpVoters_meadianHousehold">Trump Voters Vs Median Household Income</option>
+    <option value="saab">Trump Voters Vs Percentage Living in Metro Area</option>
+  </select>
+  <button onclick='selectTest(); return false;'>Push To Change Graph</button>
+</section>
+
+<!-- Code for graph areas -->
+<main>  
+
+  <div>
+    <div class="bk-root">
+      <div class="bk-plotdiv" id="16f76b21-f3d6-4083-8663-1421b65e4339">
+      </div>
+    </div>
+  </div>
+  <h6 class='center'>Correlation between both columns: {{ corr_0 }}</h6>
+
+  <hr>
+
+  <div>
+    <div class="bk-root">
+        <div class="bk-plotdiv" id="ffd182a2-14e4-4e28-9019-9dee84ee5447">
+        </div>
+    </div>
+  </div>
+  <h6 class='center'>Correlation between both columns: {{ corr_1 }}</h6>
+
+  <hr>
+
+  <div>
+    <div class="bk-root">
+      <div class="bk-plotdiv" id="32d95d3a-4065-4e29-964b-364ec46cc2c3"></div>
+    </div>
+  </div>
+  <h6 class='center'>Correlation between both columns: {{ corr_2 }}</h6>
+
+  <hr>
+
+  <div>
+    <div class="bk-root">
+      <div class="bk-plotdiv" id="9adf2f36-5d2c-44ec-91c1-3bf370048301"></div>
+    </div>
+  </div>
+  <h6 class='center'>Correlation between both columns: {{ corr_3 }}</h6>
+
+  <hr>
+
+  <div>
+    <div class="bk-root">
+      <div class="bk-plotdiv" id="1ced75fa-dd94-42c3-a4b7-7a41d5801916"></div>
+    </div>
+  </div>
+  <h6 class='center'>Correlation between both columns: {{ corr_4 }}</h6>
+
+  <hr>
+
+  <div>
+    <div class="bk-root">
+      <div class="bk-plotdiv" id="4f80e6f8-361e-48db-81b7-38cf171b515e"></div>
+    </div>
+  </div>
+  <h6 class='center'>Correlation between both columns: {{ corr_5 }}</h6>
+
+  <hr>
+
+</main>
+
+<h1 onclick='test(); return false' id='one'>TEST</h1>
+
+<hr>   
+
+<script src='{{ url_for('static', filename='js/graph.js') }}'></script>
+<script type="text/javascript">
+  // console.log({{ corr_5 }});
+  function test() {
+    document.getElementById('one').id = 'two';
+  }
+
+  function selectTest() {
+
+    var selected = document.getElementById('select_path').value;
+    if (selected = "trumpVoters_meadianHousehold") {
+      var el = document.getElementById('ffd182a2-14e4-4e28-9019-9dee84ee5447').id = '4f80e6f8-361e-48db-81b7-38cf171b515e';
+      console.log(el)
+    }
+
+  }
+
+
+</script>
+{% endblock %}
