@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block body %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/graph.css') }}">
 <!-- Bokeh code -->
 <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.12.6.min.css" type="text/css" />        
@@ -21,6 +22,7 @@
 
 <!-- Code for the area on which graph to see -->
 <section id='optionSection'>
+  <h5>To see a graph, please select one from the menu below</h5>
   <select id="select_path">
     <option value="trumpVoters_meadianHousehold">Trump Voters Vs Median Household Income</option>
     <option value="trumpVoters_metroArea">Trump Voters Vs Percentage Living in Metro Area</option>
@@ -28,7 +30,7 @@
     <option value="blackPoverty_hateCrimes">Black Poverty Vs Hate Crimes</option>
     <option value="giniIndex_hateCrimes">Gini Index Vs Hate Crimes</option>
   </select>
-  <button onclick='selectTest(); return false;'>Push To Change Graph</button>
+  <button class='initial_btn' onclick='selectGraph(); return false;'>Push To Change Graph</button>
 </section>
 
 <!-- Code for graph areas -->
@@ -87,14 +89,15 @@
 <hr>   
 
 <script src='{{ url_for('static', filename='js/graph.js') }}'></script>
+
 <script type="text/javascript">
+//The code below will change the graph on the graph page when the user selects a 
+//specific graph to look at. I'm not 100% sure why, but when this code is moved into a 
+//seperate JS file, the graphs do not appear. 
   
-  var selected = '';
-
-  function selectTest() {
-
-    selected = document.getElementById('select_path').value;
-
+  //This function will clear out the previous graphs on the page. Thus, when a user selects 
+  //a new graph to look at, this function will clear out the old one. 
+  let reset = () => {
     document.getElementById("graphOne").style.display = "none";
     document.getElementById("graphOneSub").style.display = "none";
     document.getElementById("graphTwo").style.display = "none";
@@ -105,24 +108,41 @@
     document.getElementById("graphFourSub").style.display = "none";
     document.getElementById("graphFive").style.display = "none";
     document.getElementById("graphFiveSub").style.display = "none";
+  };
 
+  //This function will fire when the user hits the button on the select menu. 
+  let selectGraph = () => {
+
+    //I get the value for what the user selected. 
+    let selected = document.getElementById('select_path').value;
+
+    //Calling the reset function from above
+    reset();
+
+    //This conditional statement will unhide the graph based on what the user selected 
+    //from the selected statement. I also all the marginTop style because the graphs where 
+    //moving further and further down the page. 
     if (selected == "trumpVoters_meadianHousehold") {
       document.getElementById("graphOne").style.display = "block";
       document.getElementById("graphOneSub").style.display = "block";
+      document.getElementById("graphOne").style.marginTop = "15px";
     } else if (selected == "trumpVoters_metroArea") {
       document.getElementById("graphTwo").style.display = "block";
       document.getElementById("graphTwoSub").style.display = "block";
+      document.getElementById("graphTwo").style.marginTop = "-15px";
     } else if (selected == "whitePoverty_hateCrimes") {
       document.getElementById("graphThree").style.display = "block";
       document.getElementById("graphThreeSub").style.display = "block";
+      document.getElementById("graphThree").style.marginTop = "-45px";
     } else if (selected == "blackPoverty_hateCrimes") {
       document.getElementById("graphFour").style.display = "block";
       document.getElementById("graphFourSub").style.display = "block";
+      document.getElementById("graphFour").style.marginTop = "-75px";
     } else if (selected == "giniIndex_hateCrimes") {
       document.getElementById("graphFive").style.display = "block";
       document.getElementById("graphFiveSub").style.display = "block";
+      document.getElementById("graphFive").style.marginTop = "-105px";
     }
-
 
   }
 

@@ -50,12 +50,10 @@ main {
   min-height: 38vh;
 }
 
-#graphOne {
-  display: none;
-}
+/* All of the code below makes the graphs display to none */
 
-#graphOneSub {
-  display: none;
+#graphOne {
+  margin-top: 15px;
 }
 
 #graphTwo {
