@@ -4,6 +4,7 @@ CSS on the home.html file.
 ****************************************/ 
 
 
+
 /*****************************************
 The CSS code below here will deal with main area
 ****************************************/ 
@@ -27,6 +28,7 @@ The CSS code below here will deal with section one
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas:
   "one two";
+  grid-gap: 1.5em;
 }
 
 .one {
@@ -49,6 +51,38 @@ The CSS code below here will deal with section one
   grid-area: two;
 }
 
+/*****************************************
+The CSS code below here will deal with section two
+****************************************/ 
+
+.section_two_heading {
+  margin-top: 30px;
+}
+
+#section_two {
+  margin-top: 50px;
+  display: grid;
+  grid-template-rows: repeat(1, auto);
+  grid-template-columns: repeat(2, auto);
+  grid-template-areas: 
+  "three four";
+  grid-gap: 1.5em;
+}
+
+.three {
+  grid-area: three;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.four {
+  grid-area: four;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 
 /*****************************************
 Code for media queries
@@ -62,6 +96,14 @@ Code for media queries
     grid-template-areas:
     "one"
     "two";
+  }
+
+  #section_two {
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(1, auto);
+    grid-template-areas:
+    "three"
+    "four";
   }
 
 
