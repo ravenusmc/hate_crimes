@@ -83,6 +83,22 @@ The CSS code below here will deal with section two
   align-items: center;
 }
 
+/*****************************************
+The CSS code below here will deal with section Three
+****************************************/ 
+
+#section_three {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.section_three_div {
+  margin-top: 30px;
+  width: 400px;
+}
+
 
 /*****************************************
 Code for media queries
@@ -104,6 +120,11 @@ Code for media queries
     grid-template-areas:
     "three"
     "four";
+  }
+
+  .section_three_div {
+    margin-top: 30px;
+    width: 285px;
   }
 
 
