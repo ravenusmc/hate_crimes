@@ -84,7 +84,13 @@ def data():
     #This variable will change the navbar to only display certain items 
     #when a user is logged in. 
     allowed_in = True 
-    return render_template('data.html', allowed_in = allowed_in)
+    #Creating the data object 
+    data = Data()
+    mean_dict = data.mean()
+    #This is a counter box that will be used to create the classes of each box 
+    box_number = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+    return render_template('data.html', allowed_in = allowed_in, box_number = box_number, 
+        mean_dict = mean_dict)
 
 
 #This route will take the user to the page with all of the graphs

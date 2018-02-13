@@ -19,11 +19,33 @@ class Data():
     def test(self):
         print(self.data)
 
+    #This method will get the mean values for all of the columns. 
     def mean(self):
         #This list will hold all of the mean values that I'll be using for this project 
-        mean_list =  []
-        mean_list.append(self.data['median_household_income'].mean())
-        return mean_list
+        column_names = ['median_household_income', 'share_unemployed_seasonal','share_population_in_metro_areas',
+        'share_population_with_high_school_degree','share_non_citizen','share_white_poverty','gini_index',
+        'share_non_white', 'avg_hatecrimes_per_100k_fbi' ]
+        mean_dict = {}
+        mean_list = []
+        number = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+        # for name in column_names:
+        count = 0
+        while count < len(number):
+            data = self.data[column_names[count]].mean()
+            data = format(data, '5.2f')
+            mean_dict[column_names[count]] = data
+            mean_dict[number[count]] = number
+            # mean_list.append(testOne, testTwo)
+            count += 1
+            #Here I am getting the mean for each column as I loop through it 
+            # data = self.data[name].mean()
+            #Formatting the values for only two decimal places
+            # data = format(data, '5.2f')
+            #Placing the column name, the key and its corresponding value, into the dict. 
+            # mean_dict[name] = data
+            # mean_dict[num] = number 
+            # mean_list.append(mean_dict[name] = data, mean_dict[number[count]] = number)
+        return mean_dict
 
     #This method will return a list of correlations. Since, I don't have everything planned out 
     #That I want to look at, I'll find the correlations as I go and add them to the list. 
@@ -52,7 +74,7 @@ class Data():
 
 
 
-# data = Data()
-# data.mean()
+data = Data()
+data.mean()
 # data.correlation()
 
