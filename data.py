@@ -20,7 +20,10 @@ class Data():
         print(self.data)
 
     def mean(self):
-        print(self.data['median_household_income'].mean())
+        #This list will hold all of the mean values that I'll be using for this project 
+        mean_list =  []
+        mean_list.append(self.data['median_household_income'].mean())
+        return mean_list
 
     #This method will return a list of correlations. Since, I don't have everything planned out 
     #That I want to look at, I'll find the correlations as I go and add them to the list. 
@@ -50,6 +53,6 @@ class Data():
 
 
 # data = Data()
-# data.test()
-#data.correlation()
+# data.mean()
+# data.correlation()
 

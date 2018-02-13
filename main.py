@@ -75,6 +75,18 @@ def home():
     allowed_in = True 
     return render_template('home.html', allowed_in = allowed_in)
 
+#This route will take the user to the data page 
+@app.route('/data')
+def data():
+    #Ensuring that the user is valid.
+    if 'username' not in session:
+        return redirect(url_for('signup'))
+    #This variable will change the navbar to only display certain items 
+    #when a user is logged in. 
+    allowed_in = True 
+    return render_template('data.html', allowed_in = allowed_in)
+
+
 #This route will take the user to the page with all of the graphs
 @app.route('/graphs')
 def graphs():
