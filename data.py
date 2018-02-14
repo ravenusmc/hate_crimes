@@ -28,21 +28,14 @@ class Data():
         mean_dict = {}
         mean_list = []
         number = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
-        # for name in column_names:
-        count = 0
-        while count < len(number):
-            data = self.data[column_names[count]].mean()
+        for name in column_names:
+            # Here I am getting the mean for each column as I loop through it 
+            data = self.data[name].mean()
+            
+            # Formatting the values for only two decimal places
             data = format(data, '5.2f')
-            mean_dict[column_names[count]] = data
-            mean_dict[number[count]] = number
-            # mean_list.append(testOne, testTwo)
-            count += 1
-            #Here I am getting the mean for each column as I loop through it 
-            # data = self.data[name].mean()
-            #Formatting the values for only two decimal places
-            # data = format(data, '5.2f')
-            #Placing the column name, the key and its corresponding value, into the dict. 
-            # mean_dict[name] = data
+            # Placing the column name, the key and its corresponding value, into the dict. 
+            mean_dict[name] = data
             # mean_dict[num] = number 
             # mean_list.append(mean_dict[name] = data, mean_dict[number[count]] = number)
         return mean_dict

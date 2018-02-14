@@ -10,17 +10,12 @@
 
   <section id='section_one'>
 
-    {% for num in box_number %}
-      <div class='box_{{ num }}'>
-        
-        {% for key, value in mean_dict.items() %}
-          <h6>{{ key }}</h6>
-          <p>Mean Value: {{ value }}</p>
-        {% endfor %}
-
+    {% for key, value in mean_dict.items() %}
+      <div class='box_{{ key }}'>
+        <h6>{{ key }}</h6>
+        <p>Mean Value: {{ value }}</p>
       </div>
     {% endfor %}
-    
 
     <!-- <div class='box_one'>
       <h6>Median Household Income</h6>
