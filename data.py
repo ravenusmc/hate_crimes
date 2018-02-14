@@ -25,19 +25,27 @@ class Data():
         column_names = ['median_household_income', 'share_unemployed_seasonal','share_population_in_metro_areas',
         'share_population_with_high_school_degree','share_non_citizen','share_white_poverty','gini_index',
         'share_non_white', 'avg_hatecrimes_per_100k_fbi' ]
+        #To display nice names on the data.html page, I have this list with the strings formatted the 
+        #way that I want. 
+        fixed_column_names = ['Median Household Income', 'Share Unemployed Seasonal','Share Population in Metro Areas',
+        'Share Population With High School Degree','Share Non Citizen','Share White Poverty','Gini Index',
+        'Share Non White', 'Avg Hate Crimes / 100k By FBI' ]
+        #This is the dictionary that will hold all of the data
         mean_dict = {}
-        mean_list = []
-        number = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
-        for name in column_names:
+        #A count for the below while loop
+        count = 0
+        #This while loop will loop through the mean for each column and pair it up with the column 
+        #name. 
+        while count < len(column_names):
             # Here I am getting the mean for each column as I loop through it 
-            data = self.data[name].mean()
-            
+            data = self.data[column_names[count]].mean()
             # Formatting the values for only two decimal places
             data = format(data, '5.2f')
             # Placing the column name, the key and its corresponding value, into the dict. 
-            mean_dict[name] = data
-            # mean_dict[num] = number 
-            # mean_list.append(mean_dict[name] = data, mean_dict[number[count]] = number)
+            mean_dict[fixed_column_names[count]] = data
+            #Incrementing the count by one
+            count += 1
+        #Returning the dict. 
         return mean_dict
 
     #This method will return a list of correlations. Since, I don't have everything planned out 

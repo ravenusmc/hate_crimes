@@ -13,6 +13,7 @@ main {
   margin-top: 50px;
   margin-left: 8%;
   margin-right: 8%;
+  margin-bottom: 50px;
 }
 
 #section_one {
@@ -27,38 +28,48 @@ main {
   margin-top: 30px;
 }
 
-.box_one {
+.box {
+  padding-top: 10px;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.Hate {
   grid-area: one;
 }
 
-.box_two {
+.Median {
   grid-area: two;
 }
 
-.box_three {
+.Share {
   grid-area: three;
 }
 
-.box_four {
+.Population {
   grid-area: four;
 }
 
-.box_five {
+.White {
   grid-area: five;
 }
 
-.box_six {
+.Gini {
   grid-area: six;
 }
 
-.box_seven {
+.Non {
   grid-area: seven;
 }
 
-.box_eight {
+.Citizen {
   grid-area: eight;
 }
 
-.box_nine {
+.Metro {
   grid-area: nine;
 }
