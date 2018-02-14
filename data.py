@@ -16,9 +16,6 @@ class Data():
         #self.data = pd.read_csv('data.csv')
         self.data = pd.read_csv('hate_crimes.csv')
 
-    def test(self):
-        print(self.data)
-
     #This method will get the mean values for all of the columns. 
     def mean(self):
         #This list will hold all of the mean values that I'll be using for this project 
@@ -63,6 +60,14 @@ class Data():
         #Returning the list 
         return correlation_list
 
+    #This method will get me the standard deviation of a column 
+    def standard_deviation(self):
+        test = self.data['median_household_income'].std()
+        print(test)
+
+
+
+
 
 """ Things to look at:
 
@@ -76,6 +81,7 @@ class Data():
 
 
 data = Data()
-data.mean()
+data.standard_deviation()
+# data.mean()
 # data.correlation()
 
