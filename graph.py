@@ -14,6 +14,9 @@ import pandas as pd
 
 class Graph():
 
+    def __init__(self):
+        self.data = pd.read_csv('hate_crimes.csv')
+
     def test(self):
         #Creatin an output file 
         output_file("test.html")
@@ -72,8 +75,18 @@ class Graph():
 
         show(plot)
 
+    def test(self):
+        Y = self.data['median_household_income']
+        X = self.data['state']
+        print(y)
+
+
+
+
+
 graph = Graph()
-graph.generate_bokeh_new_graph()
+# graph.generate_bokeh_new_graph()
+graph.test()
 
 
 

@@ -13,7 +13,6 @@ import pandas as pd
 class Data():
 
     def __init__(self):
-        #self.data = pd.read_csv('data.csv')
         self.data = pd.read_csv('hate_crimes.csv')
 
     #This method will get the mean values for all of the columns. 
@@ -60,28 +59,26 @@ class Data():
         #Returning the list 
         return correlation_list
 
-    #This method will get me the standard deviation of a column 
+    #This method will get me the standard deviation of a column. Please note, that all lot of the 
+    #code here is very similar to the mean method above. That is why it does not have comments. 
     def standard_deviation(self):
-        test = self.data['median_household_income'].std()
-        print(test)
+        column_names = ['median_household_income', 'share_unemployed_seasonal','share_population_in_metro_areas',
+        'share_population_with_high_school_degree','share_non_citizen','share_white_poverty','gini_index',
+        'share_non_white', 'avg_hatecrimes_per_100k_fbi' ]
+        fixed_column_names = ['Median Household Income', 'Share Unemployed Seasonal','Share Population in Metro Areas',
+        'Share Population With High School Degree','Share Non Citizen','Share White Poverty','Gini Index',
+        'Share Non White', 'Avg Hate Crimes / 100k By FBI' ]
+        std_dict = {}
+        count = 0
+        while count < len(column_names):
+            standard_deviation = self.data[column_names[count]].std()
+            data = format(standard_deviation, '5.2f')
+            std_dict[fixed_column_names[count]] = data
+            count += 1
+        return std_dict
 
-
-
-
-
-""" Things to look at:
-
-    1. Average of median_household_income 
-    2. Average of share_white_poverty
-    3. Average of gini_index
-    4. Average of hate_crimes / FBI  
-
-"""
-
-
-
-data = Data()
-data.standard_deviation()
+# data = Data()
+# data.standard_deviation()
 # data.mean()
 # data.correlation()
 

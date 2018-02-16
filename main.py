@@ -87,10 +87,11 @@ def data():
     #Creating the data object 
     data = Data()
     mean_dict = data.mean()
+    std_dict = data.standard_deviation()
     #This is a counter box that will be used to create the classes of each box 
     box_number = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
     return render_template('data.html', allowed_in = allowed_in, box_number = box_number, 
-        mean_dict = mean_dict)
+        mean_dict = mean_dict, std_dict = std_dict)
 
 
 #This route will take the user to the page with all of the graphs
@@ -128,6 +129,15 @@ def edit():
             db.update(username_original, username)
             return redirect(url_for('edit'))
         return render_template('edit.html', allowed_in = allowed_in, username = username_original)
+
+#This route will take the user to the conclusion page 
+@app.route('/conclusion')
+def conclusion():
+    if 'username' not in session:
+        return redirect(url_for('signup'))
+    else:
+        allowed_in = True 
+        return render_template('concl.html', allowed_in = allowed_in)
 
 #This route will sign out the user 
 @app.route('/sign_out')

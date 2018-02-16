@@ -6,9 +6,9 @@
 
 <main>
 
-  <h1 class='center'>The Mean Values for Nine Columns</h1>
+  <h1 class='center'>The Mean Values</h1>
 
-  <section id='section_one'>
+  <section id='section'>
 
     {% for key, value in mean_dict.items() %}
       <div class='box {{ key }}'>
@@ -19,10 +19,24 @@
 
   </section>
 
+  <hr>
+
+  <h1 class='center'>The Standard Deviation Values</h1>
+
+  <section id='section'>
+
+    {% for key, value in std_dict.items() %}
+      <div class='box {{ key }}'>
+        <h6>{{ key }}</h6>
+        <p>Standard Deviation: {{ value }}</p>
+      </div>
+    {% endfor %}
+
+  </section>
+
 
 </main>
 
-
-
+<hr>
 
 {% endblock %}

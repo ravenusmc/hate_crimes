@@ -16,7 +16,7 @@ main {
   margin-bottom: 50px;
 }
 
-#section_one {
+#section {
   display: grid;
   grid-template-rows: repeat(3, auto);
   grid-template-columns: repeat(3, auto);
@@ -86,7 +86,7 @@ main {
 
 @media only all and (max-width: 768px){
 
-  #section_one {
+  #section {
     display: grid;
     grid-template-rows: repeat(9, auto);
     grid-template-columns: repeat(1, auto);
