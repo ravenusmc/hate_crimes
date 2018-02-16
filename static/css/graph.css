@@ -17,6 +17,8 @@ body {
   text-align: center;
 }
 
+
+
 /*******************************
 CSS for the header and se
 ********************************/
@@ -86,5 +88,15 @@ main {
 
 #graphFiveSub {
   display: none;
+}
+
+/*******************************
+CSS for the histogram charts
+********************************/
+
+
+#histogram_graph {
+  width: 800px;
+  height: 600px;
 }
 

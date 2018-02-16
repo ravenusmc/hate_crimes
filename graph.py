@@ -75,18 +75,27 @@ class Graph():
 
         show(plot)
 
-    def test(self):
-        Y = self.data['median_household_income']
-        X = self.data['state']
-        print(y)
-
+    #This method will make the historgram plots 
+    def histogram(self):
+        #Getting the data that I want from the csv file.
+        income = self.data['median_household_income']
+        #creating the bins for how the data will be distrubuted 
+        bins = [35521,39585.4,43649.8,47714.4,51778.6,55843,59907.4,63971.8,68036.2,72100.6,76165]
+        #Creating the histogram 
+        plt.hist(income, bins, histtype='bar', rwidth=0.8)
+        #creating the labels, legend and launching the 
+        plt.xlabel('Media Income')
+        plt.ylabel('Number of States')
+        plt.title('Distrubution of Median Household Income')
+        plt.legend()
+        plt.show()
 
 
 
 
 graph = Graph()
 # graph.generate_bokeh_new_graph()
-graph.test()
+graph.histogram()
 
 
 
