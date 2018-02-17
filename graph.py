@@ -77,27 +77,29 @@ class Graph():
 
     #This method will make the historgram plots 
     def histogram(self):
+        data_column = 'share_non_citizen'
         #Getting the data that I want from the csv file.
-        income = self.data['median_household_income']
+        data = self.data['share_non_citizen']
         #creating the bins for how the data will be distrubuted 
-        bins = [35521, 38908.0, 42295.0, 45682.0, 49069.0, 52456.0, 55843.0, 59230.0, 62617.0, 
-        66004.0, 69391.0, 72778.0, 76165.0]
+        bins = self.get_bins(data_column)
+        print(bins)
+        #bins = 
         #Creating the histogram 
-        plt.hist(income, bins, histtype='bar', rwidth=0.8)
+        plt.hist(data, bins, histtype='bar', rwidth=0.8)
         #creating the labels, legend and launching the 
-        plt.xlabel('Range of Median Income')
+        plt.xlabel('Percentage of Gini Index')
         plt.ylabel('Number of States')
-        plt.title('Distrubution of Median Income')
+        plt.title('Distrubution of Gini Index')
         plt.legend()
         plt.show()
 
     #This method will get the value range for the histogram. The method will not really be used in this 
     #project. Just a quick way for me to get the values that will go into the bins. 
-    def get_bins(self):
+    def get_bins(self, column):
         #I ask the user how many bins they want the graph to have.
         bin_number = float(input("Please enter amount of bins: "))
         #I get the specific data column 
-        data = self.data['median_household_income']
+        data = self.data[column]
         #I find the max and min in that column
         max_value = data.max()
         min_value = data.min()
@@ -117,19 +119,27 @@ class Graph():
             min_value = min_value + increment
             #Increasing the count by one
             count += 1
-        #printing the list. 
-        print(values) 
+        #printing the list.
+        return values 
+        #print(values) 
 
+    # def test(self):
+    #     output_file("bokeh_graph.html")
+    #     income = self.data['median_household_income']
+    #     bins = [35521, 38908.0, 42295.0, 45682.0, 49069.0, 52456.0, 55843.0, 59230.0, 62617.0, 
+    #     66004.0, 69391.0, 72778.0, 76165.0]
+    #     p = figure(plot_width=600, plot_height=500)
+    #     p.vbar(x=income, width=1, bottom=0,
+    #            top=bins, color="firebrick")
 
-
-
-
-
+    #     show(p)
 
 graph = Graph()
-# graph.generate_bokeh_new_graph()
-graph.histogram()
 #graph.get_bins()
+graph.histogram()
+# graph.generate_bokeh_new_graph()
+
+# graph.test()
 
 
 

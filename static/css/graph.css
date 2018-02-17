@@ -99,6 +99,8 @@ CSS for the histogram charts
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: -30px;
+  border-top: 2px solid black;
 }
 
 #buttonAlign {
