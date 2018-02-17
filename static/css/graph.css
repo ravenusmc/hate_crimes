@@ -94,6 +94,20 @@ main {
 CSS for the histogram charts
 ********************************/
 
+#historgram_area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#buttonAlign {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
 
 #histogram_graph {
   width: 800px;

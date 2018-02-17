@@ -78,15 +78,16 @@ class Graph():
     #This method will make the historgram plots 
     def histogram(self):
         #Getting the data that I want from the csv file.
-        income = self.data['share_unemployed_seasonal']
+        income = self.data['median_household_income']
         #creating the bins for how the data will be distrubuted 
-        bins = [0.027999999999999997, 0.032499999999999994, 0.036999999999999991, 0.041499999999999988, 0.045999999999999985, 0.050499999999999982, 0.054999999999999979, 0.059499999999999977, 0.063999999999999974, 0.068499999999999978, 0.072999999999999982]
+        bins = [35521, 38908.0, 42295.0, 45682.0, 49069.0, 52456.0, 55843.0, 59230.0, 62617.0, 
+        66004.0, 69391.0, 72778.0, 76165.0]
         #Creating the histogram 
         plt.hist(income, bins, histtype='bar', rwidth=0.8)
         #creating the labels, legend and launching the 
-        plt.xlabel('Media Income')
+        plt.xlabel('Range of Median Income')
         plt.ylabel('Number of States')
-        plt.title('Distrubution of Median Household Income')
+        plt.title('Distrubution of Median Income')
         plt.legend()
         plt.show()
 
@@ -94,9 +95,9 @@ class Graph():
     #project. Just a quick way for me to get the values that will go into the bins. 
     def get_bins(self):
         #I ask the user how many bins they want the graph to have.
-        bin_number = int(input("Please enter amount of bins: "))
+        bin_number = float(input("Please enter amount of bins: "))
         #I get the specific data column 
-        data = self.data['share_unemployed_seasonal']
+        data = self.data['median_household_income']
         #I find the max and min in that column
         max_value = data.max()
         min_value = data.min()

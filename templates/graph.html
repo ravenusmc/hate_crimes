@@ -83,11 +83,21 @@
 
   <hr>
 
-  <section>
+  <section id='historgram_area'>
     <h1 class='center'>Histogram Graphs</h1>
 
+    <div>
+      <select id="select_histogram">
+        <option value="median">Median Income Histogram</option>
+        <option value="seasonal">Unemployed Season Workers Histogram</option>
+      </select>
+      <div id='buttonAlign'>
+        <button class='initial_btn' onclick='changeHistogram(); return false;'>Push To Change Graph</button>
+      </div>
+    </div>
+
     <div id='histogram_graph_div'>
-      <img id='histogram_graph' src="../static/graphs/income.png">
+      <img id='histogram_graph' src="../static/graphs/median_income.png">
       <p class='center'>Data</p>
     </div>
 
@@ -99,7 +109,7 @@
 <hr>   
 
 <script src='{{ url_for('static', filename='js/graph.js') }}'></script>
-
+<script src='{{ url_for('static', filename='js/graph_two.js') }}'></script>
 <script type="text/javascript">
 //The code below will change the graph on the graph page when the user selects a 
 //specific graph to look at. I'm not 100% sure why, but when this code is moved into a 
