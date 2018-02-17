@@ -78,9 +78,9 @@ class Graph():
     #This method will make the historgram plots 
     def histogram(self):
         #Getting the data that I want from the csv file.
-        income = self.data['median_household_income']
+        income = self.data['share_unemployed_seasonal']
         #creating the bins for how the data will be distrubuted 
-        bins = [35521,39585.4,43649.8,47714.4,51778.6,55843,59907.4,63971.8,68036.2,72100.6,76165]
+        bins = [0.027999999999999997, 0.032499999999999994, 0.036999999999999991, 0.041499999999999988, 0.045999999999999985, 0.050499999999999982, 0.054999999999999979, 0.059499999999999977, 0.063999999999999974, 0.068499999999999978, 0.072999999999999982]
         #Creating the histogram 
         plt.hist(income, bins, histtype='bar', rwidth=0.8)
         #creating the labels, legend and launching the 
@@ -90,12 +90,45 @@ class Graph():
         plt.legend()
         plt.show()
 
+    #This method will get the value range for the histogram. The method will not really be used in this 
+    #project. Just a quick way for me to get the values that will go into the bins. 
+    def get_bins(self):
+        #I ask the user how many bins they want the graph to have.
+        bin_number = int(input("Please enter amount of bins: "))
+        #I get the specific data column 
+        data = self.data['share_unemployed_seasonal']
+        #I find the max and min in that column
+        max_value = data.max()
+        min_value = data.min()
+        #I then get the range of values from the max and min
+        range_values = max_value - min_value
+        #I then calculate the increment value that will start at min and go all the way to the 
+        #max value 
+        increment = range_values / bin_number
+        #Using a counter 
+        count = 0
+        #This list will hold all of the values. 
+        values = []
+        while count <= bin_number:
+            #placing the value into the list
+            values.append(min_value)
+            #getting the next value in the sequence
+            min_value = min_value + increment
+            #Increasing the count by one
+            count += 1
+        #printing the list. 
+        print(values) 
+
+
+
+
 
 
 
 graph = Graph()
 # graph.generate_bokeh_new_graph()
 graph.histogram()
+#graph.get_bins()
 
 
 
