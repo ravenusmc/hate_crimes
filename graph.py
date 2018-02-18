@@ -77,19 +77,20 @@ class Graph():
 
     #This method will make the historgram plots 
     def histogram(self):
-        data_column = 'share_non_citizen'
+        data_column = 'avg_hatecrimes_per_100k_fbi'
         #Getting the data that I want from the csv file.
-        data = self.data['share_non_citizen']
+        data = self.data['avg_hatecrimes_per_100k_fbi']
+        #pulling out the rows that have no value
+        data = data.dropna()
         #creating the bins for how the data will be distrubuted 
+        #I use the get_bins method in order to do this. 
         bins = self.get_bins(data_column)
-        print(bins)
-        #bins = 
         #Creating the histogram 
         plt.hist(data, bins, histtype='bar', rwidth=0.8)
         #creating the labels, legend and launching the 
-        plt.xlabel('Percentage of Gini Index')
+        plt.xlabel('Hate Crime Percentage / 100K')
         plt.ylabel('Number of States')
-        plt.title('Distrubution of Gini Index')
+        plt.title('Distrubution of Hate Crime / 100K')
         plt.legend()
         plt.show()
 
@@ -119,20 +120,10 @@ class Graph():
             min_value = min_value + increment
             #Increasing the count by one
             count += 1
-        #printing the list.
+        #Returning the list 
         return values 
-        #print(values) 
 
-    # def test(self):
-    #     output_file("bokeh_graph.html")
-    #     income = self.data['median_household_income']
-    #     bins = [35521, 38908.0, 42295.0, 45682.0, 49069.0, 52456.0, 55843.0, 59230.0, 62617.0, 
-    #     66004.0, 69391.0, 72778.0, 76165.0]
-    #     p = figure(plot_width=600, plot_height=500)
-    #     p.vbar(x=income, width=1, bottom=0,
-    #            top=bins, color="firebrick")
 
-    #     show(p)
 
 graph = Graph()
 #graph.get_bins()
@@ -190,7 +181,16 @@ graph.histogram()
 
 
 
+    # def test(self):
+    #     output_file("bokeh_graph.html")
+    #     income = self.data['median_household_income']
+    #     bins = [35521, 38908.0, 42295.0, 45682.0, 49069.0, 52456.0, 55843.0, 59230.0, 62617.0, 
+    #     66004.0, 69391.0, 72778.0, 76165.0]
+    #     p = figure(plot_width=600, plot_height=500)
+    #     p.vbar(x=income, width=1, bottom=0,
+    #            top=bins, color="firebrick")
 
+    #     show(p)
 
 
 
