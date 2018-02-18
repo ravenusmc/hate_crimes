@@ -1,8 +1,10 @@
 
 #importing outside libraries for use in the project
 from flask import Flask, session, jsonify, redirect, url_for, escape, render_template, request, flash
+import matplotlib.pyplot as plt, mpld3
 import json 
 import requests
+
 
 #importing files that I made for the project 
 from user import *
@@ -129,6 +131,28 @@ def edit():
             db.update(username_original, username)
             return redirect(url_for('edit'))
         return render_template('edit.html', allowed_in = allowed_in, username = username_original)
+
+@app.route('/maps')
+def maps():
+    if 'username' not in session:
+        return redirect(url_for('signup'))
+    else: 
+        allowed_in =  True 
+        return render_template('maps.html', allowed_in = allowed_in)
+
+#This function is what will convert a csv file to be used with d3.
+@app.route('/my/data/endpoint')
+def get_d3_data():
+    data = Data()
+    data_file = data.convert_csv_for_d3()
+    return data_file.to_csv()
+
+@app.route("/json")
+def json():
+    data = Data()
+    data_file = data.convert_json_for_d3()
+    # return data_file
+    return data_file.to_json()
 
 #This route will take the user to the conclusion page 
 @app.route('/conclusion')

@@ -1,0 +1,11 @@
+/*******************************
+The CSS code in this file will deal 
+with the maps.html page
+********************************/
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}

@@ -2,6 +2,7 @@
 from bokeh.charts import Scatter, output_file, show
 from bokeh.plotting import figure, output_file, show
 import csv
+import geopandas as gpd
 import matplotlib.pyplot as plt
 import numpy as np
 from nvd3 import scatterChart
@@ -76,6 +77,19 @@ class Data():
             std_dict[fixed_column_names[count]] = data
             count += 1
         return std_dict
+
+    #This method will allow the csv file to be used by D3.js.
+    def convert_csv_for_d3(self):
+        self.data = pd.read_csv('hate_crimes.csv')
+        data = pd.DataFrame(self.data)
+        return data
+
+    #This method will allow the csv file to be used by D3.js.
+    def convert_json_for_d3(self):
+        # self.__data = pd.read_json('us-states.json')
+        self.data = gpd.read_file('us-states.json')
+        df = self.data
+        return df
 
 # data = Data()
 # data.standard_deviation()
