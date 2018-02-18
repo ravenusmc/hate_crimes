@@ -11,6 +11,12 @@ function changeHistogram(){
     document.getElementById('histogram_graph').src = "../static/graphs/median_income.png";
   }else if (selected == 'seasonal'){
     document.getElementById('histogram_graph').src = "../static/graphs/unemployed_season.png";
+  }else if (selected == 'gini'){
+    document.getElementById('histogram_graph').src = "../static/graphs/gini.png";
+  }else if (selected == 'hate_crime'){
+    document.getElementById('histogram_graph').src = "../static/graphs/hate_crime.png";
+  }else if (selected == 'white_poverty'){
+    document.getElementById('histogram_graph').src = "../static/graphs/white_poverty.png";
   }
 
 }
