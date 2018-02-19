@@ -15,11 +15,16 @@
 
 <main>
 
-  <select id="select_map">
-    <option value="FBI">FBI Hate Crimes</option>
-    <option value="median_income">Median House Hold Income</option>
-  </select>
-  <button class='initial_btn' onclick='selectMap(); return false;'>Push To Change Map</button>
+  <h2>Please Select Which Map You Want To See</h2>
+
+  <div>
+    <select id="select_map">
+      <option value="FBI">FBI Hate Crimes</option>
+      <option value="hate_crimes_SPLC">SPLC Hate Crimes</option>
+      <option value="median_income">Median House Hold Income</option>
+    </select>
+    <button class='initial_btn' onclick='selectMap(); return false;'>Push To Change Map</button>
+  </div>
 
   <div id='us-map'>
   </div>

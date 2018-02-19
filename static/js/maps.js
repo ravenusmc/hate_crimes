@@ -1,32 +1,18 @@
 //The code in this file will be for the maps.html file and will mainly contain a lot 
 //of the D3.JS for creating the maps. 
 
-//Setting up the variables for the map
-var width = 800;
-var height = 800;
-var svg = d3.select("#us-map").append("svg")
-            .attr("width",width)
-            .attr("height",height);
-
-var projection = d3.geo.albersUsa().translate([width/2,height/2]);
-projection = projection.scale(1000)
-var path = d3.geo.path().projection(projection);
-
-//Setting up basic look of the map
-d3.json("/json",function(data) {
-  svg.append("path")
-    .datum(data)
-    .attr('d',path)
-    .attr('fill',"rgb(237,248,233)")
-    .attr('stroke','black');
-});
-
-
+//This function will change the map based on what the user selects.
 function selectMap() {
+
     let value = document.getElementById('select_map').value;
+
+    d3.select("svg").remove();
     
     if (value == 'FBI'){
         let dataColumn = 'avg_hatecrimes_per_100k_fbi';
+        createMap(dataColumn);
+    }else if (value = 'hate_crimes_SPLC') {
+        let dataColumn = 'hate_crimes_per_100k_splc';
         createMap(dataColumn);
     }else if (value == 'median_income'){
         let dataColumn = 'median_household_income';
@@ -37,7 +23,28 @@ function selectMap() {
 
 function createMap(dataColumn){
 
+
         d3.csv("/my/data/endpoint", function(data) {
+
+        var width = 800;
+        var height = 800;
+        var svg = d3.select("#us-map")
+                    .append("svg")
+                    .attr("width",width)
+                    .attr("height",height);
+
+        var projection = d3.geo.albersUsa().translate([width/2,height/2]);
+        projection = projection.scale(1000)
+        var path = d3.geo.path().projection(projection);
+
+        //Setting up basic look of the map
+        d3.json("/json",function(data) {
+          svg.append("path")
+            .datum(data)
+            .attr('d',path)
+            .attr('fill',"rgb(237,248,233)")
+            .attr('stroke','black');
+        });
 
         //Setting up the color for the map as well as the range. 
         var color = d3.scale.quantize()
