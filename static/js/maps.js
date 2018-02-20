@@ -11,13 +11,23 @@ function selectMap() {
     if (value == 'FBI'){
         let dataColumn = 'avg_hatecrimes_per_100k_fbi';
         createMap(dataColumn);
-    }else if (value = 'hate_crimes_SPLC') {
+    }else if (value == 'hate_crimes_SPLC') {
         let dataColumn = 'hate_crimes_per_100k_splc';
         createMap(dataColumn);
     }else if (value == 'median_income'){
         let dataColumn = 'median_household_income';
+        console.log(dataColumn);
         createMap(dataColumn);
-    }     
+    }else if (value == 'share_unemployed') {
+        let dataColumn = 'share_unemployed_seasonal';
+        createMap(dataColumn);
+    }else if (value == 'metro_areas'){
+        let dataColumn = 'share_population_in_metro_areas';
+        createMap(dataColumn);
+    }else if (value == 'hs_degree'){
+        let dataColumn = 'share_population_with_high_school_degree';
+        createMap(dataColumn);
+    }
 }
 
 
