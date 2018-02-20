@@ -19,6 +19,7 @@ This is a data science project that will be focusing on hate crimes across the U
 3. Pandas-0.18.1
 4. Numpy-1.11.0
 5. MySQL-5.6.26
+6. D3.JS-3.5
 
 ### Operation
 
