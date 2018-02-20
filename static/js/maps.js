@@ -16,7 +16,6 @@ function selectMap() {
         createMap(dataColumn);
     }else if (value == 'median_income'){
         let dataColumn = 'median_household_income';
-        console.log(dataColumn);
         createMap(dataColumn);
     }else if (value == 'share_unemployed') {
         let dataColumn = 'share_unemployed_seasonal';
@@ -103,7 +102,12 @@ function createMap(dataColumn){
                         //If value is undefined…
                         return "#ccc";
                     }
-               });
+               })
+               .append("title")
+               .text(function(d){
+                    console.log(d);
+                    return "State: " + d.properties.name + " Value: " + d.properties.value;
+                });
         })
     });
 }
