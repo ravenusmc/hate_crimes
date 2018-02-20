@@ -26,6 +26,21 @@ function selectMap() {
     }else if (value == 'hs_degree'){
         let dataColumn = 'share_population_with_high_school_degree';
         createMap(dataColumn);
+    }else if (value == 'non_citizen'){
+        let dataColumn = 'share_non_citizen';
+        createMap(dataColumn);
+    }else if (value == 'white_pov'){
+        let dataColumn = 'share_white_poverty';
+        createMap(dataColumn);
+    }else if (value == 'gini'){
+        let dataColumn = 'gini_index';
+        createMap(dataColumn);
+    }else if (value == 'share_non_white'){
+        let dataColumn = 'share_non_white';
+        createMap(dataColumn);
+    }else if (value == 'trump'){
+        let dataColumn = 'share_voters_voted_trump';
+        createMap(dataColumn);
     }
 }
 
@@ -106,7 +121,7 @@ function createMap(dataColumn){
                .append("title")
                .text(function(d){
                     console.log(d);
-                    return "State: " + d.properties.name + " Value: " + d.properties.value;
+                    return "State: " + d.properties.name + ',' + " Value: " + d.properties.value;
                 });
         })
     });

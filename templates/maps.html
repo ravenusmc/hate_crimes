@@ -16,7 +16,7 @@
 <main>
 
   <h2>Please Select Which Map You Want To See</h2>
-
+  <h4>Hover over state to see exact values</h4>
   <div>
     <select id="select_map">
       <option value="FBI">FBI Hate Crimes</option>
@@ -25,9 +25,15 @@
       <option value="share_unemployed">Share of Unemployed Seasonal</option>
       <option value="metro_areas">Share of Population in Metro Areas</option>
       <option value="hs_degree">Share of Population in with H.S. Degree</option>
-      
+      <option value="non_citizen">Share of Non-Citizen</option>
+      <option value="white_pov">Share of White Poverty</option>
+      <option value="gini">Gini Index</option>
+      <option value="share_non_white">Share of Non-White</option>
+      <option value="trump">Share of Voters who Voted Trump</option>
     </select>
-    <button class='initial_btn' onclick='selectMap(); return false;'>Push To Change Map</button>
+    <div class='map_div'>
+      <button class='initial_btn' onclick='selectMap(); return false;'>Push To Change Map</button>
+    </div>
   </div>
 
   <div id='us-map'>
