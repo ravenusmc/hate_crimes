@@ -22,9 +22,12 @@ class Scraping():
         with open("blog_data.csv", "w") as csv_file:
             csv_writer = writer(csv_file)
             csv_writer.writerow(["year", "total", "anti-black", "anti-jewish", "anti-islamic"])
+            year = 
+            total = 
             black = self.soup.find(id="cell71").get_text()
             jewish = self.soup.find(id="cell121").get_text()
             islamic = self.soup.find(id="cell151").get_text()
+            csv_writer.writerow([year, total, black, jewish, islamic])
 
             # for table in tables:
 
