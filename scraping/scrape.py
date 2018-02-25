@@ -10,7 +10,12 @@ import requests
 class Scraping():
 
     def __init__(self):
-        self.response = requests.get("https://ucr.fbi.gov/hate-crime/2010/tables/table-1-incidents-offenses-victims-and-known-offenders-by-bias-motivation-2010.xls")
+        self.requests_list = ["https://ucr.fbi.gov/hate-crime/2010/tables/table-1-incidents-offenses-victims-and-known-offenders-by-bias-motivation-2010.xls",
+        "https://ucr.fbi.gov/hate-crime/2011/tables/table-1", "https://ucr.fbi.gov/hate-crime/2012/tables-and-data-declarations/1tabledatadecpdf/table_1_incidents_offenses_victims_and_known_offenders_by_bias_motivation_2012.xls",
+        "https://ucr.fbi.gov/hate-crime/2013/tables/1tabledatadecpdf/table_1_incidents_offenses_victims_and_known_offenders_by_bias_motivation_2013.xls",
+        "https://ucr.fbi.gov/hate-crime/2014/tables/table-1", "https://ucr.fbi.gov/hate-crime/2015/tables-and-data-declarations/1tabledatadecpdf",
+        ]
+        self.response = requests.get(self.requests_list[0])
 
     #This method will set up the initial url 
     def setup_soup(self):
@@ -21,13 +26,14 @@ class Scraping():
     def push_into_csv(self):
         with open("blog_data.csv", "w") as csv_file:
             csv_writer = writer(csv_file)
-            csv_writer.writerow(["year", "total", "anti-black", "anti-jewish", "anti-islamic"])
-            year = 
-            total = 
+            #csv_writer.writerow(["year", "total", "anti-black", "anti-jewish", "anti-islamic"])
+            # year = 
+            # total = 
             black = self.soup.find(id="cell71").get_text()
             jewish = self.soup.find(id="cell121").get_text()
             islamic = self.soup.find(id="cell151").get_text()
-            csv_writer.writerow([year, total, black, jewish, islamic])
+            print(black)
+            #csv_writer.writerow([year, total, black, jewish, islamic])
 
             # for table in tables:
 

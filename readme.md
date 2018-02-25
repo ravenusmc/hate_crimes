@@ -34,6 +34,20 @@ Besides using the five-thrity-eight github repo for this project, I also pulled 
 Hate Crimes, by year, pulled from the FBI at the following source: 
 https://www.fbi.gov/investigate/civil-rights/hate-crimes
 
+https://ucr.fbi.gov/hate-crime/2010/tables/table-1-incidents-offenses-victims-and-known-offenders-by-bias-motivation-2010.xls
+
+https://ucr.fbi.gov/hate-crime/2011/tables/table-1
+
+https://ucr.fbi.gov/hate-crime/2012/tables-and-data-declarations/1tabledatadecpdf/table_1_incidents_offenses_victims_and_known_offenders_by_bias_motivation_2012.xls
+
+https://ucr.fbi.gov/hate-crime/2013/tables/1tabledatadecpdf/table_1_incidents_offenses_victims_and_known_offenders_by_bias_motivation_2013.xls
+
+https://ucr.fbi.gov/hate-crime/2014/tables/table-1
+
+https://ucr.fbi.gov/hate-crime/2015/tables-and-data-declarations/1tabledatadecpdf
+
+https://ucr.fbi.gov/hate-crime/2016/tables/table-1
+
 
 # Preview
 
