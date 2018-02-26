@@ -101,6 +101,7 @@ CSS for the histogram charts
   align-items: center;
   margin-top: -30px;
   border-top: 2px solid black;
+  border-bottom: 2px solid black;
 }
 
 #buttonAlign {
@@ -115,4 +116,15 @@ CSS for the histogram charts
   width: 800px;
   height: 600px;
 }
+
+/*******************************
+CSS for the FBI Hate Crime Graphs
+********************************/
+#fbi_graphs{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 

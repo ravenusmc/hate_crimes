@@ -36,7 +36,7 @@ class Scraping():
             #Creating a csv variable 
             csv_writer = writer(csv_file)
             #This line will write the rows to the CSV file, the header rows. 
-            csv_writer.writerow(["year", "total", "anti-black", "anti-jewish", "anti-islamic"])
+            csv_writer.writerow(["year", "total", "black", "jewish", "islamic"])
 
             count = 0
             while count < len(year_list):

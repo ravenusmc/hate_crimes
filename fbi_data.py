@@ -3,6 +3,7 @@
 #the code for how I did this. 
 
 #importing libraries that I will use with this project
+from bokeh.models import CategoricalColorMapper, HoverTool
 from bokeh.plotting import figure, output_file, show
 from bokeh.plotting import ColumnDataSource, figure, output_file, show
 import pandas as pd
@@ -23,13 +24,15 @@ class BuildGraphs():
 
 
         p = figure(plot_width=400, plot_height=400, tools='pan,wheel_zoom,box_zoom,reset,hover,save',)
-        p.line(x='year', y='total', line_width=2, source=fbi_data)
-        # p.line([1, 2, 3, 4, 5], [6, 7, 2, 4, 5], line_width=2)
+        p.line(x='year', y='black', line_width=2, source=fbi_data)
+
+        #setting up the hover features. 
+        hover = p.select_one(HoverTool)
+        hover.tooltips = [('Year', '@year'),
+        ('Total Hate Crimes Against Blacks', '@black')]
+
+        #excuting the code to create the graph
         show(p)
-
-        # plot.circle(x='share_non_white', y='share_voters_voted_trump', source=hate_crime_data, 
-        #     size=15, color=dict(field='won_state', transform=color_mapper))
-
 
 test = BuildGraphs()
 test.build_chart()

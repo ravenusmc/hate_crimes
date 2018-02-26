@@ -94,6 +94,7 @@
         <option value="hate_crime">Hate Crime Distrubution</option>
         <option value="white_poverty">White Poverty Distrubution</option>
       </select>
+
       <div id='buttonAlign'>
         <button class='initial_btn' onclick='changeHistogram(); return false;'>Push To Change Graph</button>
       </div>
@@ -104,6 +105,35 @@
     </div>
 
   </section>
+
+  <hr>
+
+  <!-- This section will hold all of the graphs for the FBI data -->
+  <section id='fbi_graphs'>
+
+      <select id="select_FBI_graph">
+        <option value="Total">Total Hate Crimes By Year</option>
+        <option value="black_fbi">Hate Crimes against Blacks</option>
+        <option value="jew">Hate Crimes against Jews</option>
+        <option value="muslim">Hate Crimes against Muslims</option>
+      </select>
+
+      <div id='FBIOne'>
+        <div class="bk-root">
+          <div class="bk-plotdiv" id="8f7a0789-4585-4fe2-b7c9-a4dea96055ff">
+          </div>
+        </div>
+      </div>
+
+      <div id='FBITwo'>
+        <div class="bk-root">
+          <div class="bk-plotdiv" id="e9848974-9672-4b51-81df-8a38ceab4c23">
+          </div>
+        </div>
+      </div>
+
+  </section>
+  <!-- End FBI Sectiion -->
 
 </main>
 
