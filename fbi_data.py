@@ -24,12 +24,12 @@ class BuildGraphs():
 
 
         p = figure(plot_width=400, plot_height=400, tools='pan,wheel_zoom,box_zoom,reset,hover,save',)
-        p.line(x='year', y='black', line_width=2, source=fbi_data)
+        p.line(x='year', y='islamic', line_width=2, source=fbi_data)
 
         #setting up the hover features. 
         hover = p.select_one(HoverTool)
         hover.tooltips = [('Year', '@year'),
-        ('Total Hate Crimes Against Blacks', '@black')]
+        ('Total Hate Crimes Against Muslims', '@islamic')]
 
         #excuting the code to create the graph
         show(p)

@@ -117,7 +117,9 @@
         <option value="jew">Hate Crimes against Jews</option>
         <option value="muslim">Hate Crimes against Muslims</option>
       </select>
+      <button class='initial_btn fbi_fix' onclick='selectFBIGraph(); return false;'>Push To Change Graph</button>
 
+      <!-- Code for the graphs -->
       <div id='FBIOne'>
         <div class="bk-root">
           <div class="bk-plotdiv" id="8f7a0789-4585-4fe2-b7c9-a4dea96055ff">
@@ -132,6 +134,21 @@
         </div>
       </div>
 
+      <div id='FBIThree'>
+        <div class="bk-root">
+          <div class="bk-plotdiv" id="06e6702f-6b64-4c9d-bb33-3c42209ccfcf">
+          </div>
+        </div>
+      </div>
+
+      <div id='FBIFour'>
+        <div class="bk-root">
+          <div class="bk-plotdiv" id="14dc3e3b-d3b8-4dd0-b68c-432807072770">
+          </div>
+        </div>
+      </div>
+      <!-- End of code for graphs --> 
+
   </section>
   <!-- End FBI Sectiion -->
 
@@ -142,6 +159,7 @@
 
 <script src='{{ url_for('static', filename='js/graph.js') }}'></script>
 <script src='{{ url_for('static', filename='js/graph_two.js') }}'></script>
+
 <script type="text/javascript">
 //The code below will change the graph on the graph page when the user selects a 
 //specific graph to look at. I'm not 100% sure why, but when this code is moved into a 
@@ -196,8 +214,41 @@
       document.getElementById("graphFive").style.marginTop = "-105px";
     }
 
+
+
   }
 
+</script>
+
+<script type="text/javascript">
+    //The code in here will do with the FBI hate crime graphs. For some reason, it was not working 
+    //in the script space above. Not exactly sure why...something to investigate at a later date. 
+
+
+    //This function will fire when the user changes the FBI Graphs that show hate crimes 
+    //by year. 
+    function selectFBIGraph() {
+
+      //I get the value for what the user selected. 
+      let selected = document.getElementById('select_FBI_graph').value;
+
+      document.getElementById("FBIOne").style.display = "none";
+      document.getElementById("FBITwo").style.display = "none";
+      document.getElementById("FBIThree").style.display = "none";
+      document.getElementById("FBIFour").style.display = "none";
+
+
+      if (selected == "Total"){
+        document.getElementById("FBIOne").style.display = "block";
+      }else if (selected == "black_fbi"){
+        document.getElementById("FBITwo").style.display = "block";
+      }else if (selected == "jew"){
+        document.getElementById("FBIThree").style.display = "block";
+      }else if (selected == "muslim") {
+        document.getElementById("FBIFour").style.display = "block";
+      }
+
+    }
 </script>
 
 {% endblock %}

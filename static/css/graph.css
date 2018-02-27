@@ -127,4 +127,26 @@ CSS for the FBI Hate Crime Graphs
   justify-content: center;
 }
 
+.fbi_fix {
+  margin-bottom: 50px;
+}
+
+#FBIOne {
+  display: none
+}
+
+#FBITwo {
+  display: none
+}
+
+#FBIThree {
+  display: none
+}
+
+#FBIFour {
+  display: none
+}
+
+
+
 
