@@ -122,11 +122,12 @@ Code for media queries
   }
 
   #section_two {
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
     grid-template-columns: repeat(1, auto);
     grid-template-areas:
     "three"
-    "four";
+    "four"
+    "five";
   }
 
   .section_three_div {

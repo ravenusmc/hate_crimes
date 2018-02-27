@@ -37,6 +37,10 @@ header {
   align-items: center;
 }
 
+.small_screens {
+  display: none;
+}
+
 select {
   margin-bottom: 15px;
 }
@@ -145,6 +149,34 @@ CSS for the FBI Hate Crime Graphs
 
 #FBIFour {
   display: none
+}
+
+/*******************************
+Media queries for graph page 
+********************************/
+
+@media only all and (max-width: 768px){
+
+  .large_screens {
+    display: none;
+  }
+
+  .small_screens {
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 50px;
+    min-height: 35vh;
+  }
+
+  #optionSection {
+    display: none;
+  }
+
+  #graph_main_area {
+    display: none;
+  }
+
 }
 
 
