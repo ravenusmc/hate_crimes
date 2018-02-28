@@ -31,7 +31,7 @@ website.
 
 Besides using the five-thrity-eight github repo for this project, I also pulled information from the following sites: https://www.kff.org/other/state-indicator/poverty-rate-by-raceethnicity/?currentTimeframe=0&sortModel=%7B%22colId%22:%22Location%22,%22sort%22:%22asc%22%7D which is where I got the information of black poverty rates. 
 
-Hate Crimes, by year, pulled from the FBI at the following source: 
+Hate Crimes, by year, pulled from the FBI at the following sources: 
 https://www.fbi.gov/investigate/civil-rights/hate-crimes
 
 https://ucr.fbi.gov/hate-crime/2010/tables/table-1-incidents-offenses-victims-and-known-offenders-by-bias-motivation-2010.xls
@@ -51,6 +51,6 @@ https://ucr.fbi.gov/hate-crime/2016/tables/table-1
 
 # Preview
 
-To see a video that talks about this project please go here: 
+To see a video that talks about this project please go here: COMING SOON
 
-Blog entry:
+Blog entry: COMING SOON
