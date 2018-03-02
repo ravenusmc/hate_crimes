@@ -1,0 +1,13 @@
+/*******************************
+The CSS code in this file will deal 
+with the edit page
+********************************/
+
+header {
+  margin-top: 50px;
+}
+
+#conclusion_main {
+  margin-left: 5%;
+  margin-right: 5%;
+}
