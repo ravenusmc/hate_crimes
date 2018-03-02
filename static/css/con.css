@@ -10,4 +10,9 @@ header {
 #conclusion_main {
   margin-left: 5%;
   margin-right: 5%;
+  min-height: 450px;
+}
+
+#first_section {
+  margin-top: 50px;
 }
