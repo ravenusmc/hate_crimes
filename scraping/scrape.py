@@ -6,7 +6,6 @@ from bs4 import BeautifulSoup
 from csv import writer
 import requests 
 
-
 #This class will take care of all of the scraping that I do. 
 class Scraping():
 
@@ -16,7 +15,6 @@ class Scraping():
         "https://ucr.fbi.gov/hate-crime/2013/tables/1tabledatadecpdf/table_1_incidents_offenses_victims_and_known_offenders_by_bias_motivation_2013.xls",
         "https://ucr.fbi.gov/hate-crime/2014/tables/table-1", "https://ucr.fbi.gov/hate-crime/2015/tables-and-data-declarations/1tabledatadecpdf",
         "https://ucr.fbi.gov/hate-crime/2016/tables/table-1"]
-        # self.response = requests.get(self.requests_list[0])
 
     #This method will set up the initial url 
     def setup_soup(self, count):
@@ -45,6 +43,7 @@ class Scraping():
                 if count == 0:
                     black = self.soup.find(id=cell_list[0]).contents[0] 
                     #converting from the weird beautiful soup data type to an integer. 
+                    #I have to do this for each of the different variables that I've declared.
                     black = self.get_number(black)
                     jewish = self.soup.find(id=cell_list[2]).get_text()
                     jewish = self.get_number(jewish)
@@ -106,9 +105,6 @@ class Scraping():
         return crime_number
      
 
-
-
-
-test = Scraping()
+# test = Scraping()
 # test.setup_soup(count)
-test.push_into_csv()
+# test.push_into_csv()

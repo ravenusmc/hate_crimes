@@ -65,9 +65,6 @@ class Graph():
         plot.circle(x='share_non_white', y='share_voters_voted_trump', source=hate_crime_data, 
             size=15, color=dict(field='won_state', transform=color_mapper))
 
-        # plot.circle(x='median_household_income', y='share_voters_voted_trump', source=hate_crime_data, 
-        #     size=15, color=dict(field='won_state', transform=color_mapper))
-
         hover = plot.select_one(HoverTool)
         hover.tooltips = [('state', '@state'),
         ('Share of Non White', '@share_non_white'),
@@ -125,16 +122,10 @@ class Graph():
 
 
 
-graph = Graph()
+# graph = Graph()
 #graph.get_bins()
-graph.histogram()
+# graph.histogram()
 # graph.generate_bokeh_new_graph()
-
-# graph.test()
-
-
-
-
 
 
 ######## OLD CODE DOWN HERE --- FOR FUTURE REFERENCE #########

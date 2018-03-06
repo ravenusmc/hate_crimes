@@ -34,6 +34,6 @@ class BuildGraphs():
         #excuting the code to create the graph
         show(p)
 
-test = BuildGraphs()
-test.build_chart()
+# test = BuildGraphs()
+# test.build_chart()
 

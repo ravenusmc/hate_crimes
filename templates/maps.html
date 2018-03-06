@@ -4,6 +4,7 @@
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.7.0/nv.d3.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/generic.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/maps.css') }}">
 
@@ -16,7 +17,6 @@
 <main>
 
   <h2 class='big_heading'>Please Select Which Map You Want To See</h2>
-  <h4 class='big_heading'>Hover over state to see exact values</h4>
   <h2 class='small_heading'>Sorry, maps not present on small screens</h2>
   <div id='selection_area'>
     <select id="select_map">
@@ -35,6 +35,12 @@
     <div class='map_div'>
       <button class='initial_btn' onclick='selectMap(); return false;'>Push To Change Map</button>
     </div>
+  </div>
+
+  <div id='map_color_labels'>
+    <h1 class='center'>Map</h1>
+    <p>LOWER <span class='one'></span><span class='two'></span><span class='three'></span><span class='four'></span><span class='five'></span> HIGHER</p>
+    <p>Hover Over State to See Exact Values</p>
   </div>
 
   <div id='us-map'>
