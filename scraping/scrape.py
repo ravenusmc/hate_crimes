@@ -9,6 +9,7 @@ import requests
 #This class will take care of all of the scraping that I do. 
 class Scraping():
 
+    #Setting up for all of the sites that I'll scrape
     def __init__(self):
         self.requests_list = ["https://ucr.fbi.gov/hate-crime/2010/tables/table-1-incidents-offenses-victims-and-known-offenders-by-bias-motivation-2010.xls",
         "https://ucr.fbi.gov/hate-crime/2011/tables/table-1", "https://ucr.fbi.gov/hate-crime/2012/tables-and-data-declarations/1tabledatadecpdf/table_1_incidents_offenses_victims_and_known_offenders_by_bias_motivation_2012.xls",
@@ -19,8 +20,8 @@ class Scraping():
     #This method will set up the initial url 
     def setup_soup(self, count):
         self.response = requests.get(self.requests_list[count])
+        #setting up beautiful soup.
         self.soup = BeautifulSoup(self.response.text, "html.parser")
-        # self.tables = self.soup.find("table")
 
     #This method will push the data into the csv file 
     def push_into_csv(self):

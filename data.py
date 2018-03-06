@@ -13,6 +13,7 @@ import pandas as pd
 #This class will handle all of the data manipulation
 class Data():
 
+    #Initing the csv file to be used.
     def __init__(self):
         self.data = pd.read_csv('hate_crimes.csv')
 
