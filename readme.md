@@ -51,6 +51,6 @@ https://ucr.fbi.gov/hate-crime/2016/tables/table-1
 
 # Preview
 
-To see a video that talks about this project please go here: COMING SOON
+To see a video that talks about this project please go here: https://www.youtube.com/watch?v=gODK1bQn2lU
 
-Blog entry: COMING SOON
+Blog entry: https://wordpress.com/post/codingsaga.wordpress.com/349
